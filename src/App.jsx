@@ -5,13 +5,16 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './Pages/Layout';
 import AdminLayout from './components/Admin/AdminLayout.jsx';
 
-// Composants Publics
+// Pages publiques
 import Hero from './components/Accueil/Hero';
 import About from './components/Accueil/About';
 import Experience from './components/Accueil/Experience';
+import Projects from './components/Accueil/Projects';
+import Skills from './components/Accueil/Skills';
+import Certificates from './components/Accueil/Certificates';
 import ContactForm from './components/Formulaire/FormulaireG6';
 
-// Composants Admin
+// Admin
 import AdminDashboard from './components/Admin/Dashboard';
 import AdminUsers from './components/Admin/Users';
 import AdminAnalytics from './components/Admin/Statistics';
@@ -23,14 +26,13 @@ import ProtectedRoute from './components/Admin/ProtectedRoute';
 import Logout from './components/Auth/Logout.jsx';
 import Login from './components/Auth/Login.jsx';
 
-// 404
 function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="text-center">
-        <h1 className="text-6xl font-bold text-gray-900 mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-8">Page non trouvée</p>
-        <a href="/" className="bg-[#0F766E] text-white px-6 py-3 rounded-lg hover:bg-[#0D6658]">
+    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
+      <div style={{ textAlign: 'center' }}>
+        <h1 style={{ fontSize: 72, fontWeight: 800, color: '#0f172a', margin: 0 }}>404</h1>
+        <p style={{ fontSize: 18, color: '#64748b', margin: '12px 0 32px' }}>Page non trouvée</p>
+        <a href="/" style={{ background: '#0d9488', color: 'white', padding: '12px 28px', borderRadius: 10, textDecoration: 'none', fontWeight: 600 }}>
           Retour à l'accueil
         </a>
       </div>
@@ -49,16 +51,14 @@ function App() {
         <Route index element={<Hero />} />
         <Route path="about" element={<About />} />
         <Route path="experience" element={<Experience />} />
+        <Route path="projects" element={<Projects />} />
+        <Route path="skills" element={<Skills />} />
+        <Route path="certificates" element={<Certificates />} />
         <Route path="contact" element={<ContactForm />} />
-        <Route
-          path="login"
-          element={
-            isAuthenticated ? <Navigate to="/admin" replace /> : <Login />
-          }
-        />
+        <Route path="login" element={isAuthenticated ? <Navigate to="/admin" replace /> : <Login />} />
       </Route>
 
-      {/* Routes admin protégées */}
+      {/* Routes admin */}
       <Route
         path="/admin"
         element={
