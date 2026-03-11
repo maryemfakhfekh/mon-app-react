@@ -5,16 +5,16 @@ const About = () => {
     {
       title: "Licence en Génie Logiciel et Systèmes d'Information",
       school: "Institut International de Technologie (IIT), Sfax",
-      years: "2023 – Présent",
-      detail: "3ᵉ année — préparation du projet de fin d'études (PFE)",
+      years: "Sept. 2023 – Présent",
+      detail: "3ᵉ année — Stage PFE en cours chez ASM All Soft Multimedia",
       color: "#0d9488",
       icon: "🎓",
     },
     {
       title: "Baccalauréat – Sciences Expérimentales",
       school: "Lycée 9 Avril 1938, Sfax",
-      years: "2023",
-      detail: "",
+      years: "2022 – 2023",
+      detail: "Formation scientifique : mathématiques, physique, sciences expérimentales.",
       color: "#6366f1",
       icon: "📜",
     },
@@ -34,6 +34,13 @@ const About = () => {
     { emoji: "🎮", label: "Jeux vidéo" },
   ];
 
+  const highlights = [
+    { icon: "🎓", label: "3ᵉ année Licence", sub: "Génie Logiciel — IIT Sfax" },
+    { icon: "💼", label: "Stage PFE en cours", sub: "ASM All Soft Multimedia" },
+    { icon: "🤖", label: "IA & Full-Stack", sub: "NLP, Angular, Flutter, Spring Boot" },
+    { icon: "⚡", label: "IEEE Student Branch", sub: "Membre actif depuis 2023" },
+  ];
+
   return (
     <>
       <style>{`
@@ -42,43 +49,83 @@ const About = () => {
         .about-section {
           padding: 88px 0;
           background: #ffffff;
-          font-family: 'Outfit', sans-serif;
+          font-family: 'Plus Jakarta Sans', sans-serif;
         }
         .about-container {
           max-width: 1140px;
           margin: 0 auto;
           padding: 0 28px;
         }
-        .section-header {
-          margin-bottom: 56px;
-        }
+        .section-header { margin-bottom: 40px; }
         .section-eyebrow {
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 0.18em;
-          text-transform: uppercase;
-          color: #0d9488;
-          margin-bottom: 10px;
-          display: flex;
-          align-items: center;
-          gap: 8px;
+          font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+          text-transform: uppercase; color: #0d9488; margin-bottom: 10px;
+          display: flex; align-items: center; gap: 8px;
         }
         .section-eyebrow::before {
-          content: '';
-          width: 24px;
-          height: 2px;
-          background: #0d9488;
-          display: inline-block;
-          border-radius: 2px;
+          content: ''; width: 24px; height: 2px; background: #0d9488;
+          display: inline-block; border-radius: 2px;
         }
         .section-title {
           font-family: 'Plus Jakarta Sans', sans-serif;
           font-size: clamp(24px, 2.8vw, 36px);
-          font-weight: 800;
-          color: #0f172a;
-          letter-spacing: -0.8px;
-          line-height: 1.05;
+          font-weight: 800; color: #0f172a; letter-spacing: -0.8px; line-height: 1.05;
         }
+
+        /* ── Carte profil ── */
+        .profile-card {
+          background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+          border: 1px solid #bbf7d0;
+          border-radius: 20px;
+          padding: 32px 36px;
+          margin-bottom: 52px;
+          display: grid;
+          grid-template-columns: 1fr auto;
+          gap: 32px;
+          align-items: center;
+        }
+        .profile-text { }
+        .profile-label {
+          font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+          text-transform: uppercase; color: #0d9488; margin-bottom: 10px;
+          display: flex; align-items: center; gap: 8px;
+        }
+        .profile-label::before {
+          content: ''; width: 20px; height: 2px; background: #0d9488;
+          display: inline-block; border-radius: 2px;
+        }
+        .profile-bio {
+          font-size: 15.5px; color: #1e293b; line-height: 1.85;
+          font-weight: 400; max-width: 620px;
+        }
+        .profile-bio strong { color: #0d9488; font-weight: 700; }
+        .profile-highlights {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+          min-width: 280px;
+        }
+        .highlight-chip {
+          background: white;
+          border: 1px solid #e2e8f0;
+          border-radius: 14px;
+          padding: 14px 16px;
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+          transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .highlight-chip:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 18px rgba(13,148,136,0.12);
+          border-color: #0d9488;
+        }
+        .highlight-icon { font-size: 22px; flex-shrink: 0; }
+        .highlight-label { font-size: 12.5px; font-weight: 700; color: #0f172a; line-height: 1.3; }
+        .highlight-sub { font-size: 11px; color: #64748b; margin-top: 2px; }
+
+        /* ── Grid principal ── */
         .about-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -86,190 +133,73 @@ const About = () => {
         }
         .block-title {
           font-family: 'Plus Jakarta Sans', sans-serif;
-          font-size: 17px;
-          font-weight: 700;
-          color: #0f172a;
+          font-size: 15px; font-weight: 700; color: #0f172a;
           margin-bottom: 20px;
-          display: flex;
-          align-items: center;
-          gap: 8px;
+          display: flex; align-items: center; gap: 8px;
         }
-        .block-title::after {
-          content: '';
-          flex: 1;
-          height: 1px;
-          background: #e2e8f0;
-        }
+        .block-title::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
 
         /* Timeline */
-        .timeline {
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-          position: relative;
-        }
+        .timeline { display: flex; flex-direction: column; gap: 20px; position: relative; }
         .timeline::before {
-          content: '';
-          position: absolute;
-          left: 19px;
-          top: 28px;
-          bottom: 28px;
-          width: 1px;
-          background: linear-gradient(to bottom, #0d9488, #e2e8f0);
+          content: ''; position: absolute; left: 19px; top: 28px; bottom: 28px;
+          width: 1px; background: linear-gradient(to bottom, #0d9488, #e2e8f0);
         }
-        .timeline-card {
-          display: flex;
-          gap: 18px;
-          align-items: flex-start;
-        }
+        .timeline-card { display: flex; gap: 18px; align-items: flex-start; }
         .timeline-icon {
-          width: 40px;
-          height: 40px;
-          border-radius: 12px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 18px;
-          flex-shrink: 0;
-          border: 2px solid white;
-          box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-          position: relative;
-          z-index: 1;
-          background: white;
+          width: 40px; height: 40px; border-radius: 12px;
+          display: flex; align-items: center; justify-content: center;
+          font-size: 18px; flex-shrink: 0; border: 2px solid white;
+          box-shadow: 0 2px 12px rgba(0,0,0,0.1); position: relative; z-index: 1; background: white;
         }
         .timeline-body {
-          background: #f8fafc;
-          border: 1px solid #e2e8f0;
-          border-radius: 14px;
-          padding: 16px 18px;
-          flex: 1;
-          transition: border-color 0.2s, box-shadow 0.2s;
+          background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px;
+          padding: 16px 18px; flex: 1; transition: border-color 0.2s, box-shadow 0.2s;
         }
-        .timeline-body:hover {
-          border-color: #0d9488;
-          box-shadow: 0 4px 16px rgba(13,148,136,0.1);
-        }
-        .timeline-year {
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 0.06em;
-          text-transform: uppercase;
-          margin-bottom: 4px;
-        }
-        .timeline-edu-title {
-          font-weight: 600;
-          font-size: 14.5px;
-          color: #1e293b;
-          margin-bottom: 3px;
-          line-height: 1.4;
-        }
-        .timeline-school {
-          font-size: 13px;
-          color: #64748b;
-        }
-        .timeline-note {
-          font-size: 12px;
-          color: #94a3b8;
-          margin-top: 5px;
-          font-style: italic;
-        }
+        .timeline-body:hover { border-color: #0d9488; box-shadow: 0 4px 16px rgba(13,148,136,0.1); }
+        .timeline-year { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px; }
+        .timeline-edu-title { font-weight: 600; font-size: 14.5px; color: #1e293b; margin-bottom: 3px; line-height: 1.4; }
+        .timeline-school { font-size: 13px; color: #64748b; }
+        .timeline-note { font-size: 12px; color: #94a3b8; margin-top: 5px; font-style: italic; }
 
         /* IEEE */
         .ieee-card {
-          display: flex;
-          gap: 14px;
-          align-items: flex-start;
+          display: flex; gap: 14px; align-items: flex-start;
           background: linear-gradient(135deg, #f0fdf4, #e0f2fe);
-          border: 1px solid #bbf7d0;
-          border-radius: 14px;
-          padding: 18px;
-          margin-top: 28px;
+          border: 1px solid #bbf7d0; border-radius: 14px; padding: 18px; margin-top: 28px;
         }
         .ieee-icon-box {
-          width: 44px;
-          height: 44px;
-          border-radius: 12px;
-          background: #0d9488;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 20px;
-          flex-shrink: 0;
+          width: 44px; height: 44px; border-radius: 12px; background: #0d9488;
+          display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
         }
-        .ieee-title {
-          font-weight: 700;
-          font-size: 14px;
-          color: #065f46;
-          margin-bottom: 4px;
-        }
-        .ieee-desc {
-          font-size: 13px;
-          color: #374151;
-          line-height: 1.6;
-        }
+        .ieee-title { font-weight: 700; font-size: 14px; color: #065f46; margin-bottom: 4px; }
+        .ieee-desc { font-size: 13px; color: #374151; line-height: 1.6; }
 
         /* Languages */
-        .lang-list {
-          display: flex;
-          flex-direction: column;
-          gap: 18px;
-        }
-        .lang-row {
-          display: flex;
-          justify-content: space-between;
-          align-items: baseline;
-          margin-bottom: 7px;
-        }
-        .lang-name {
-          font-weight: 600;
-          font-size: 14px;
-          color: #1e293b;
-        }
-        .lang-level {
-          font-size: 12px;
-          color: #64748b;
-        }
-        .bar-track {
-          height: 6px;
-          background: #e2e8f0;
-          border-radius: 10px;
-          overflow: hidden;
-        }
-        .bar-fill {
-          height: 100%;
-          border-radius: 10px;
-          transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+        .lang-list { display: flex; flex-direction: column; gap: 18px; }
+        .lang-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 7px; }
+        .lang-name { font-weight: 600; font-size: 14px; color: #1e293b; }
+        .lang-level { font-size: 12px; color: #64748b; }
+        .bar-track { height: 6px; background: #e2e8f0; border-radius: 10px; overflow: hidden; }
+        .bar-fill { height: 100%; border-radius: 10px; transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1); }
 
         /* Interests */
-        .interests-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 10px;
-          margin-top: 24px;
-        }
+        .interests-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px; }
         .interest-chip {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          padding: 11px 14px;
-          background: #fafaf8;
-          border: 1.5px solid #e2e8f0;
-          border-radius: 12px;
-          font-size: 13.5px;
-          font-weight: 500;
-          color: #374151;
-          transition: all 0.2s;
-          cursor: default;
+          display: flex; align-items: center; gap: 10px; padding: 11px 14px;
+          background: #fafaf8; border: 1.5px solid #e2e8f0; border-radius: 12px;
+          font-size: 13.5px; font-weight: 500; color: #374151;
+          transition: all 0.2s; cursor: default;
         }
         .interest-chip:hover {
-          background: #f0fdf4;
-          border-color: #0d9488;
-          color: #065f46;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(13,148,136,0.12);
+          background: #f0fdf4; border-color: #0d9488; color: #065f46;
+          transform: translateY(-2px); box-shadow: 0 4px 12px rgba(13,148,136,0.12);
         }
 
+        @media (max-width: 900px) {
+          .profile-card { grid-template-columns: 1fr; }
+          .profile-highlights { grid-template-columns: 1fr 1fr; min-width: unset; }
+        }
         @media (max-width: 768px) {
           .about-grid { grid-template-columns: 1fr; gap: 40px; }
           .interests-grid { grid-template-columns: 1fr; }
@@ -278,13 +208,44 @@ const About = () => {
 
       <section className="about-section">
         <div className="about-container">
+
           <div className="section-header">
             <p className="section-eyebrow">Parcours</p>
             <h2 className="section-title">À propos de moi</h2>
           </div>
 
+          {/* ── Carte profil ── */}
+          <div className="profile-card">
+            <div className="profile-text">
+              <p className="profile-label">Profil</p>
+              <p className="profile-bio">
+                Étudiante en <strong>3ᵉ année de Licence en Génie Logiciel et Systèmes d'Information</strong> à l'IIT de Sfax,
+                actuellement en <strong>stage PFE</strong> chez ASM All Soft Multimedia.
+                Passionnée par le développement web, les applications mobiles et l'<strong>intelligence artificielle</strong>,
+                j'ai acquis à travers mes projets académiques et professionnels de solides compétences en
+                développement full-stack, analyse de données et traitement automatique du langage naturel (NLP).
+                Curieuse, adaptable et motivée, je m'investis pleinement dans chaque projet afin de concevoir
+                des solutions innovantes et à forte valeur ajoutée.
+              </p>
+            </div>
+
+            <div className="profile-highlights">
+              {highlights.map((h) => (
+                <div key={h.label} className="highlight-chip">
+                  <span className="highlight-icon">{h.icon}</span>
+                  <div>
+                    <p className="highlight-label">{h.label}</p>
+                    <p className="highlight-sub">{h.sub}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── Grid Formation + Langues ── */}
           <div className="about-grid">
-            {/* Left — Education */}
+
+            {/* Formation */}
             <div>
               <p className="block-title">Formation</p>
               <div className="timeline">
@@ -313,7 +274,7 @@ const About = () => {
               </div>
             </div>
 
-            {/* Right — Languages + Interests */}
+            {/* Langues + Intérêts */}
             <div>
               <p className="block-title">Langues</p>
               <div className="lang-list">
@@ -346,6 +307,7 @@ const About = () => {
                 ))}
               </div>
             </div>
+
           </div>
         </div>
       </section>

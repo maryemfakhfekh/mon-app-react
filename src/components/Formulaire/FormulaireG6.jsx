@@ -14,7 +14,7 @@ const FormulaireG6 = () => {
     phone: "+216 99 144 624",
     location: "Sfax, Tunisie",
     linkedin: "https://www.linkedin.com/in/maryem-fakhfekh-616231364/",
-    github: "https://github.com/",
+    github: "https://github.com/maryemfakhfekh",
   };
 
   const handleChange = (e) => {

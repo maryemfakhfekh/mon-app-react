@@ -18,12 +18,12 @@ const Hero = () => {
     headline: "Développeuse Web & Intelligence Artificielle",
     tagline: "Stagiaire PFE · IIT Sfax · Génie Logiciel",
     intro:
-      "Passionnée par le développement web et l'intelligence artificielle, je construis des solutions logicielles modernes et efficaces. Actuellement en stage PFE, je travaille sur des projets combinant développement full-stack et NLP.",
+      "Étudiante en Génie Logiciel et Systèmes d'Information, passionnée par le développement web, les applications mobiles et l'intelligence artificielle. À travers mes projets académiques et professionnels, j'ai développé des compétences en développement full-stack, analyse de données et NLP.",
     email: "maryemfakhfekh1@gmail.com",
     phone: "+216 99 144 624",
     location: "Sfax, Tunisie",
     linkedin: "https://www.linkedin.com/in/maryem-fakhfekh-616231364/",
-    github: "https://github.com/",
+    github: "https://github.com/maryemfakhfekh",
     cvUrl: cvFile,
   };
 
