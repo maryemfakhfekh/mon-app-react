@@ -8,6 +8,8 @@ const certAWS = "/certificates/cert-aws.png";
 const certCybersecurity = "/certificates/cert-cybersecurity.png";
 const certArduino = "/certificates/cert-arduino-iot.png";
 const certGraphicDesign = "/certificates/cert-graphic-design.png";
+const certIEEEXtreme = "/certificates/xtreme.png";
+
 
 const Certificates = () => {
   const [selected, setSelected] = useState(null);
@@ -121,6 +123,21 @@ const Certificates = () => {
       description:
         "Participation au workshop Graphic Design organisé par IEEE IIT Student Branch à l'Institut International de Technologie de Sfax.",
     },
+    {
+  id: 8,
+  type: "Programming Competition",
+  title: "IEEEXtreme 18.0",
+  issuer: "IEEE",
+  program: "IEEEXtreme Programming Competition",
+  date: "26 Octobre 2024",
+  year: 2024,
+  category: "Programmation",
+  color: "#1d4ed8",
+  icon: "💻",
+  image: certIEEEXtreme,
+  description:
+    "Participation à la compétition internationale IEEEXtreme 18.0 Programming Competition avec l’équipe Lasmariposas.",
+}
   ];
 
   const categories = [
@@ -130,6 +147,7 @@ const Certificates = () => {
     "Cybersécurité",
     "Design",
     "IoT & Embarqué",
+    "Programmation"
   ];
 
   const filtered =
